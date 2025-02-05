@@ -12,7 +12,7 @@ const router = createRouter({
       path: '/cadastro',
       name: 'cadastro',
       
-      component: () => import('../views/AboutView.vue'),
+      component: () => import('../views/Cadastro.vue'),
     },
   ],
 })

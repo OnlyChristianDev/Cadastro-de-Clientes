@@ -5,3 +5,7 @@ declare module "*.vue" {
     export default component;
   }
   
+  declare module '@fortawesome/vue-fontawesome' {
+    import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+    export { FontAwesomeIcon };
+  }

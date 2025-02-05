@@ -1,5 +1,5 @@
 import './assets/main.css'
-
+import fontAwesome from './plugins/font-awasome'
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
