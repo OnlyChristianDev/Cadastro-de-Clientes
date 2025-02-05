@@ -3,11 +3,20 @@ import { ref } from 'vue'
 import InputsCadastro from './InputsCadastro.vue';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
+const nomeCompleto = ref('')
+const cadastrarPF = () => {
+    if (nomeCompleto.value === '') {
+    alert('Campos vazios')
+  } else {
+    console.log(`${nomeCompleto.value}`)
+  }
+}
+
 </script>
 <template>
     <div class="flex flex-col items-center justify-center gap-3">
         <div class="flex items-center justify-center gap-3">
-            <InputsCadastro icon="user" placeholder="Nome completo"/>
+            <InputsCadastro v-model="nomeCompleto" icon="user" placeholder="Nome completo"/>
             <InputsCadastro icon="user" placeholder="Cpf"/>
         </div>
        <div class="flex items-center justify-center gap-3">
@@ -27,7 +36,7 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
         <FontAwesomeIcon icon="file" class="mt-2 text-gray-300" />
             <textarea class="bg-gray-200 mx-auto resize-none h-[130px] p-2 w-[534px] outline-none" name="" id=""></textarea>
        </div>
-        <button class="cursor-pointer mt-2 bg-blue-800 text-white rounded-md h-[50px] w-[300px] p-1">Cadastrar</button>
+        <button @click="cadastrarPF" class="cursor-pointer mt-2 bg-blue-800 text-white rounded-md h-[50px] w-[300px] p-1">Cadastrar</button>
     </div>
     
 </template>

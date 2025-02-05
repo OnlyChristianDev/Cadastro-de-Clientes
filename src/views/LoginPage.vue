@@ -10,7 +10,7 @@ const LogarFunction = () => {
   if (valorInputSenha.value === '' || valorInputmail.value === '') {
     alert('Campos vazios')
   } else {
-    axios.post('http://localhost:3000/user/cadastropf', {
+    axios.post('http://localhost:3000/user/login', {
     email: valorInputmail.value,
     senha: valorInputSenha.value
   })

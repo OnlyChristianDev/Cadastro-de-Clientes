@@ -12,6 +12,7 @@
       default: 'Digite algo...', 
     },
   })
+  
   const valorInput = ref('')
    
 </script>
