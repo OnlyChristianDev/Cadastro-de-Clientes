@@ -1,15 +1,26 @@
 <script setup>
+import axios from 'axios'
 import { ref } from 'vue'
 import InputsLogin from '../components/InputsLogin.vue'
 
-const childref = ref(null)
+const valorInputSenha = ref('')
+const valorInputmail = ref('')
 
-const verificarCampo = () => {
-    if(childref.value.valorInput === ''){
-        alert('Campo vazio')
-    } else {
-        alert('Campo preenchido')
-    }
+const LogarFunction = () => {
+  if (valorInputSenha.value === '' || valorInputmail.value === '') {
+    alert('Campos vazios')
+  } else {
+    axios.post('http://localhost:3000/user/cadastropf', {
+    email: valorInputmail.value,
+    senha: valorInputSenha.value
+  })
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+  }
 }
 </script>
 
@@ -25,8 +36,8 @@ const verificarCampo = () => {
                 Login.
             </h1>
             <div class="flex flex-col items-center justify-center gap-2">
-                <InputsLogin ref="childref" placeholder="Digite seu e-mail" />
-                <InputsLogin placeholder="Digite sua senha" />
+                <InputsLogin v-model="valorInputSenha" placeholder="Digite seu e-mail" />
+                <InputsLogin v-model="valorInputmail" placeholder="Digite sua senha" />
                 <div class="flex gap-7 w-[300px]">
                     <div class="flex gap-1 items-center justify-center">
                         <input class="cursor-pointer" type="checkbox" name="" id="" />
@@ -35,7 +46,7 @@ const verificarCampo = () => {
                     <a href="#"><p class="text-sm underline ">esqueci minha senha</p></a>
                 </div>
             </div>
-            <button @click="verificarCampo" class="cursor-pointer mt-4 bg-blue-800 text-white rounded-md w-[200px] p-1">Login</button>
+            <button @click="LogarFunction" class="cursor-pointer mt-4 bg-blue-800 text-white rounded-md w-[200px] p-1">Login</button>
         </div>
         </div>
     </div>

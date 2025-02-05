@@ -14,6 +14,12 @@ const router = createRouter({
       
       component: () => import('../views/Cadastro.vue'),
     },
+    {
+      path: '/listausuarios',
+      name: 'listausuarios',
+      
+      component: () => import('../views/ListaUsuario.vue'),
+    },
   ],
 })
 

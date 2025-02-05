@@ -3,6 +3,7 @@ import { ref } from 'vue'
 import InputsCadastro from './InputsCadastro.vue';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 </script>
+
 <template>
     <div class="flex flex-col items-center gap-3">
         <div class="flex items-center gap-3 mr-4">

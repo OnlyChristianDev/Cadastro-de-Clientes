@@ -1,6 +1,7 @@
 <script setup>
     import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-
+    import { ref } from 'vue'
+   
     const props = defineProps({
     icon: {
       type: [String, Object],  
@@ -11,9 +12,8 @@
       default: 'Digite algo...', 
     },
   })
-    import { ref } from 'vue'
-    const valorInput = ref('')
-    defineExpose({ valorInput })
+  const valorInput = ref('')
+   
 </script>
 
 

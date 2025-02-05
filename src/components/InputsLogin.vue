@@ -1,11 +1,21 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, defineProps, defineEmits } from 'vue'
+
+const props = defineProps({
+  placeholder: String,
+})
 
 const valorInput = ref('')
-defineExpose({ valorInput })
 
+defineEmits(['update:modelValue'])
 </script>
 
 <template>
-     <input v-model="valorInput" class="bg-gray-100 outline-none p-1 w-[300px] rounded-md" type="text" :placeholder="placeholder" />
+  <input
+    v-model="valorInput"
+    class="bg-gray-100 outline-none p-1 w-[300px] rounded-md"
+    type="text"
+    :placeholder="props.placeholder"
+    @input="$emit('update:modelValue', valorInput)"
+  />
 </template>
