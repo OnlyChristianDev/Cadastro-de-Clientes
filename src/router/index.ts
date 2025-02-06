@@ -18,7 +18,13 @@ const router = createRouter({
       path: '/listausuarios',
       name: 'listausuarios',
       
-      component: () => import('../views/ListaUsuario.vue'),
+      component: () => import('../views/ListaDeUsuarios.vue'),
+    },
+    {
+      path: '/removeuser',
+      name: 'removerusuarios',
+      
+      component: () => import('../views/RemoveUser.vue'),
     },
   ],
 })
