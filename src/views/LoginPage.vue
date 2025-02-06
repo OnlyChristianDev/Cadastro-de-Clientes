@@ -22,6 +22,7 @@ const LogarFunction = () => {
   });
   }
 }
+
 </script>
 
 <template>

@@ -1,5 +1,5 @@
 <script setup>
-import { ref, defineProps, defineEmits } from 'vue'
+import { ref, defineProps } from 'vue'
 
 const props = defineProps({
   placeholder: String,
@@ -7,7 +7,6 @@ const props = defineProps({
 
 const valorInput = ref('')
 
-defineEmits(['update:modelValue'])
 </script>
 
 <template>

@@ -21,7 +21,7 @@ const tipoCliente = ref('pf')
             </div>
             <div>
                 <PessoaFisica v-if="tipoCliente === 'pf'" />
-                <PessoaJuridica v-if="tipoCliente === 'pj' " />
+                <PessoaJuridica v-if="tipoCliente === 'pj'" />
             </div>
         </div>
     </div>
